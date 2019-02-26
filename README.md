@@ -6,6 +6,7 @@
 2. Create a link to this repo: <br/>
    `git remote add upstream https://github.com/CoderAcademy-BRI/ruby-challenges`
 3. For each challenge (in your fork):
+
    1. Checkout the branch (in your fork)<br/>
       `git checkout -b <challenge_branch>`
    2. Pull down the challenge: <br/>
@@ -21,3 +22,5 @@
 - 01_ruby_intro
 - 02_input_output
 - 03_largest_number
+- 04_sum_numbers
+  > > > > > > > ca0498614d1b4bcb2ee50e3189f18e597eb98b3b
