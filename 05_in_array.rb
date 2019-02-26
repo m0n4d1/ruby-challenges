@@ -15,9 +15,9 @@
 
 #Built-in method
 def in_array (needle, haystack)
-  haystack.include?(needle)
+  haystack.include?(needle) #Use built-in include? Array method
 
-rescue Exception => each
+rescue Exception => e 
   p e
   return e
 end
