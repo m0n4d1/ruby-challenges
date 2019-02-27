@@ -42,7 +42,7 @@ rescue Exception => e
   return e
 end
 
-#recursion
+#Recursion 
 def in_array (needle, haystack)
   if haystack == [] #if array empty there are no items to check, needle not found, return false
     return false
