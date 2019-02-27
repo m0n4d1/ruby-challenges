@@ -29,11 +29,11 @@ end
 
 #Itteration
 def in_array (needle, haystack)
-  has_needle = false 
-  haystack.each do |item|
-    if item == needle
-      break has_needle = true
-    else end
+  has_needle = false #initialize variable for storing if needle is found, default is false.
+  haystack.each do |item| #for each item in haystack
+    if item == needle #check if item is needle
+      break has_needle = true #if item is needle set has_needle to true, exit loop
+    else end #if item is not needle do nothing, goto next item.
   end
   return has_needle 
 
@@ -44,15 +44,15 @@ end
 
 #recursion
 def in_array (needle, haystack)
-  if haystack == []
+  if haystack == [] #if array empty there are no items to check, needle not found, return false
     return false
-  elsif haystack[0] == needle 
+  elsif haystack[0] == needle #if needle found return true
     return true 
   else 
-    in_array(needle, haystack.drop(1))
+    in_array(needle, haystack.drop(1)) #if first element is not needle, drop that elment and check again
   end
   
-rescue Exception => e
+rescue Exception => e 
   p e
   return e
 end
