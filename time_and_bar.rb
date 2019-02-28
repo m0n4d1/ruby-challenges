@@ -37,7 +37,7 @@ morning_commute = Commute.new(left_home, entered_classroom)
 commute_duration = morning_commute.duration
 
 #prints a complete sentence describing how I got to class and how it long it took
-# p "Anthony's morning commute to class took #{commute_duration} travelling via public transport(bus)"
+p "Anthony's morning commute to class took #{commute_duration} travelling via public transport(bus)"
 
 # PART 2:
 # You are working at a bar where you have a current backlog of drinks to make:
