@@ -35,7 +35,7 @@ def hide_intersection( a = get_input, b = get_input )
   #NOTE: the disjunctive union of sets a and b will be the set of words persent in either one of the user input strings but not the other.
   #Map over the disjunctive union of sets a and b calling downcase on each element.
   #Take the intersection of sets a and b mapping over each element replacing it with the string "HIDDEN" then add this modified intersection to the modified disjunctive union.
-  #NOTE: This modified interesection will be the set of words present in both user input strings replaced with "HIDDEN".
+  #NOTE: The modified interesection will be the set of words present in both user input strings replaced with "HIDDEN".
   #Modified union of sets a and b is returned.
   
   return ((a | b) - (a & b)).map { |x| x.downcase } + (a & b).map { "HIDDEN" }
