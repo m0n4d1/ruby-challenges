@@ -38,7 +38,7 @@ def palindrome (string)
   p string
   if string.class == String 
     palindrome(string.chars) 
-  elsif string.length == 1
+  elsif !string || string.length == 1
     return true
   elsif string[0] == string[-1] 
     palindrome(string[1..-2])
