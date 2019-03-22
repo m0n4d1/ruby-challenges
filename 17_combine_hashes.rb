@@ -23,6 +23,23 @@
 
 # Test your solution with ruby tests/17_combine_hashes.rb
 
-def combine_hashes(hash1, hash2)
-  Hash[ (hash1.keys | hash2.keys).map { |x| [x, hash1[x] + hash2[x] ] }]
+def maybe_add(a,b)
+  x = a || b
+  y = b || a
+  x == y ? x : x + y
 end
+
+def maybe_add(a,b)
+  a || b == b || a ? a || b : a || b + b || a
+end
+
+def combine_hashes(hash1, hash2)
+  Hash[ (hash1.keys | hash2.keys).map { |x| [x, maybe_add(hash1[x],hash2[x]) ] }]
+end
+
+
+test1 = {a: 1, b: 3}
+test2 = {b: 1,c: 3}
+
+p combine_hashes(test1,test2)
+
