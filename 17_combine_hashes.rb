@@ -33,7 +33,7 @@ def combine_hashes(hash1, hash2)
 end
 
 hash1 = {a: 1, b: 3}
-hash2 = {b: 3, c:4}
+hash2 = {b: 3, c: 4}
 
 hash3 = {a: "string1", b: "string2"}
 hash4 = {b: "string3", c: "string4"}
