@@ -1,0 +1,32 @@
+# Background
+# Using array and string methods
+# Passing in one argument
+
+## Specs
+
+#Your task is to make a function that can take any 
+#non-negative integer as a argument and return it 
+#with its digits in descending order. 
+#Essentially, rearrange the digits to create 
+#the highest possible number.
+
+#Examples:
+#Input: 21445 Output: 54421
+#Input: 145263 Output: 654321
+#Input: 1254859723 Output: 9875543221
+
+def descending_order(n)
+  # Your code goes here
+  raise ArgumentError, "Argument: (#{n}) is not a positive interger" unless n.is_a? Integer and n > 0
+  n > 1 ? n.to_s.chars.sort.reverse.join("") : n
+end
+
+# Test your code here
+p descending_order(1)
+# p descending_order("string")
+p descending_order(115342)
+
+# Add some interesting test cases that test edge cases
+huge_int = 5432589405823485315823049512587295734883294719834712983742938743128974123984712389741289734218937412341235432532614351434548729075432503275023587432057230498752304752034753249853245738492503278920345702395045986734728592134750192373012561423508415734089175098374502750439752384750541303485713508714385940398438470957841093475203485745748594098721045723475340875203752754075235402753204785203857203457243058743205734720574235874390754035723045720345734547230598324057439025874305893475673281964673461398746186713296421964192364132964319234612394732619476329643291649264132964912364192364129346192364
+
+p descending_order(huge_int)
