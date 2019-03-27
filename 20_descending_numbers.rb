@@ -15,18 +15,71 @@
 #Input: 145263 Output: 654321
 #Input: 1254859723 Output: 9875543221
 
+
 def descending_order(n)
   # Your code goes here
   raise ArgumentError, "Argument: (#{n}) is not a positive interger" unless n.is_a? Integer and n > 0
   n > 1 ? n.to_s.chars.sort.reverse.join("") : n
 end
 
-# Test your code here
-p descending_order(1)
-# p descending_order("string")
-p descending_order(115342)
 
-# Add some interesting test cases that test edge cases
-huge_int = 5432589405823485315823049512587295734883294719834712983742938743128974123984712389741289734218937412341235432532614351434548729075432503275023587432057230498752304752034753249853245738492503278920345702395045986734728592134750192373012561423508415734089175098374502750439752384750541303485713508714385940398438470957841093475203485745748594098721045723475340875203752754075235402753204785203857203457243058743205734720574235874390754035723045720345734547230598324057439025874305893475673281964673461398746186713296421964192364132964319234612394732619476329643291649264132964912364192364129346192364
 
-p descending_order(huge_int)
+
+
+#____________
+#recursive pure arithmatic
+#____________
+#length of a base10 number counting from 0
+def length n
+  Math.log10(n).floor 
+end
+
+# Reduces an integer to its first digit eg. 321 #=> 3
+def get_first_digit n 
+  n / 10**length(n) 
+end
+
+# Round integer to 1 significant figure  eg. 321 #=> 300
+def round_1_sig_fig n 
+  get_first_digit(n) * 10**length(n)
+end
+
+# Drops fist digit off an integer eg. 321 #=> 21
+def drop1 n 
+  n - round_1_sig_fig(n)
+end
+
+# single pass of a bubble sort (comb through once)
+def comb n
+  #if integer has more than 1 digit 
+  # p n
+  if n >= 10
+    #if the  first digit is less than the second digit of the integer
+    if get_first_digit(n) < get_first_digit(drop1(n))
+      #switch first and second digits, continue combing
+      (round_1_sig_fig(drop1(n)) * 10) + comb( (round_1_sig_fig(n) / 10) + drop1(drop1(n)) )
+    else
+      #digits are in correct positions, contiune combing
+      round_1_sig_fig(n) + comb(drop1(n))
+    end
+  else
+    #last digit reached, comb finshed.
+    n
+  end
+
+end
+
+def sort n
+  # if a combing over n equals n then the sorting is complete, else continue sorting (combing through)
+  comb(n) == n ? n : sort(comb(n))
+end
+
+
+# alias 
+def descending_numbers n  
+  sort n
+end
+
+huge_int = 543275398574357847652574398
+
+p descending_numbers huge_int
