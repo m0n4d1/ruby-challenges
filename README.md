@@ -74,4 +74,8 @@
 * 18_find_errors
 * 19_balanced_number
 * 20_descending_numbers
+<<<<<<< HEAD
 >>>>>>> 81e46faea3bf8de55ef764c4abc4d6c440b9bae5
+=======
+* 21_sort_numbers
+>>>>>>> 8c04d27021a238ed168bba0dca4befe31c1c9749
