@@ -23,19 +23,25 @@
 # Example input: [2,5,4,8,2]
 # Expected output: [2,2,4,5,8]
 
-def sort(num_array,i=0)
-  # Your code goes here
-  p num_array[i]
-  if num_array.length > i + 1
-    if num_array[i] > num_array[i + 1]
-      sort( (i > 1 ? num_array[0..i - 1] : []) + [num_array[i+1] + num_array[i]] + num_array[i+2..-1]  )
+
+#recursive bubble sort
+def comb n
+  # p n
+  if n.length > 1 
+    if n[0] > n[1]
+      [n[1]] + ( n.length > 2 ? comb([n[0]] + n[2..-1] ) : [n[0]] )
     else
-      sort( num_array, i + 1 )
+      [n[0]] + comb(n[1..-1]) 
     end
   else
-    sort( num_array, 0 )
+    n
   end
-  
-  return num_array
 end
-p sort([2,5,4,8,2])
+
+def sort n
+  # Your code goes here
+  comb(n) == n ? n : sort(comb(n))
+end
+
+
+puts sort([2,5,4,8,2,4,5,1,2,3,4,3,1,6,4,3,4,56,6,12,34,15,6,42,4,2,3,4,234,5,2,3,4,5,65,2,3,4,5,3,2,5,6,6435,634,343,23,43,2]).join(" ")

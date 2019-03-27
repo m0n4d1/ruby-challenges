@@ -52,7 +52,7 @@ end
 # single pass of a bubble sort (comb through once)
 def comb n
   #if integer has more than 1 digit 
-  # p n
+  p n
   if n >= 10
     #if the  first digit is less than the second digit of the integer
     if get_first_digit(n) < get_first_digit(drop1(n))
@@ -80,6 +80,6 @@ def descending_numbers n
   sort n
 end
 
-huge_int = 543275398574357847652574398
+huge_int = 327598323461738461238476321847632874632178463288432324861328462314873621846327846231746231784628314637284628731468723678326324721641327846328174612837463218462387462138746321874612384637286132863287327326
 
 p descending_numbers huge_int
