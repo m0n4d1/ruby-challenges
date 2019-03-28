@@ -25,23 +25,43 @@
 
 
 #recursive bubble sort
-def comb n
-  # p n
+def bubble n
   if n.length > 1 
     if n[0] > n[1]
-      [n[1]] + ( n.length > 2 ? comb([n[0]] + n[2..-1] ) : [n[0]] )
+      [n[1]] + ( n.length > 2 ? bubble([n[0]] + n[2..-1] ) : [n[0]] )
     else
-      [n[0]] + comb(n[1..-1]) 
+      [n[0]] + bubble(n[1..-1]) 
     end
   else
     n
   end
 end
 
-def sort n
-  # Your code goes here
-  comb(n) == n ? n : sort(comb(n))
+def bubble_sort n
+  bubble(n) == n ? n : bubble_sort(bubble(n))
 end
 
+#recursive merge sort
+def merge (a,b,arr=[])
+  if a[0] && b[0] 
 
-puts sort([2,5,4,8,2,4,5,1,2,3,4,3,1,6,4,3,4,56,6,12,34,15,6,42,4,2,3,4,234,5,2,3,4,5,65,2,3,4,5,3,2,5,6,6435,634,343,23,43,2]).join(" ")
+    a[0] < b[0] ? merge(a.drop(1),b, arr.concat([a[0]])) : merge(a,b.drop(1),arr.concat([b[0]]))
+  else
+    a.any? ? arr.concat(a) : arr.concat(b)
+  end
+end
+
+def merge_sort arr
+  if arr.length > 1
+    merge(merge_sort(arr[0..(arr.length / 2 - 1)]), merge_sort(arr[(arr.length / 2)..-1]))
+  else
+    arr
+  end
+end
+
+arr = [2,5,4,8,2,4,5,1,2,3,4,3,1,6,4,3,4,56,6,12,34,15,6,42,4,2,3,4,234,5,2,3,4,5,65,2,3,4,5,3,2,5,6,6435,634,343,23,43,2]
+
+p (bubble_sort arr).join
+p (merge_sort arr).join
+
+
