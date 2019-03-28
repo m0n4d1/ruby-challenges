@@ -44,7 +44,6 @@ end
 #recursive merge sort
 def merge (a,b,arr=[])
   if a[0] && b[0] 
-
     a[0] < b[0] ? merge(a.drop(1),b, arr.concat([a[0]])) : merge(a,b.drop(1),arr.concat([b[0]]))
   else
     a.any? ? arr.concat(a) : arr.concat(b)
