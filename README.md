@@ -76,6 +76,7 @@
 * 20_descending_numbers
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 81e46faea3bf8de55ef764c4abc4d6c440b9bae5
 =======
 * 21_sort_numbers
@@ -84,3 +85,8 @@
 * 21_sort_numbers
 * 22_exes_ohs
 >>>>>>> 4a3959cc538f83ca85bc65db68ff57b1adb64ac5
+=======
+* 21_sort_numbers
+* 22_exes_ohs
+* 23_first_non_repeating
+>>>>>>> a87187ce63d794abb384db7a7bfb3dbc533fc579
