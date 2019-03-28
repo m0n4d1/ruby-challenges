@@ -52,7 +52,6 @@ end
 # single pass of a bubble sort (comb through once)
 def comb n
   #if integer has more than 1 digit 
-  p n
   if n >= 10
     #if the  first digit is less than the second digit of the integer
     if get_first_digit(n) < get_first_digit(drop1(n))
@@ -74,12 +73,22 @@ def sort n
   comb(n) == n ? n : sort(comb(n))
 end
 
-
-# alias 
-def descending_numbers n  
-  sort n
+def remove_zeros n
+  unless n == 0 || n < 10
+    remove_zeros(drop1(n)) * 10 + get_first_digit(n) 
+  else
+    n 
+  end
 end
 
-huge_int = 327598323461738461238476321847632874632178463288432324861328462314873621846327846231746231784628314637284628731468723678326324721641327846328174612837463218462387462138746321874612384637286132863287327326
+# alias 
+def descending_numbers n 
+  sort(remove_zeros(n)) * 10**(length(n) - length(remove_zeros(n)))
+end
+
+huge_int = 10
+
+# p descending_numbers huge_int
+# p descending_numbers 534060435206
 
 p descending_numbers huge_int
