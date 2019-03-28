@@ -16,16 +16,6 @@
 #Input: 1254859723 Output: 9875543221
 
 
-def descending_order(n)
-  # Your code goes here
-  raise ArgumentError, "Argument: (#{n}) is not a positive interger" unless n.is_a? Integer and n > 0
-  n > 1 ? n.to_s.chars.sort.reverse.join("") : n
-end
-
-
-
-
-
 #____________
 #recursive pure arithmatic
 #____________
@@ -83,7 +73,8 @@ end
 
 # alias 
 def descending_numbers n 
-  sort(remove_zeros(n)) * 10**(length(n) - length(remove_zeros(n)))
+  raise ArgumentError, "Argument: (#{n}) is not a positive interger" unless n.is_a? Integer and n > 0
+  n > 1 ? sort(remove_zeros(n)) * 10**(length(n) - length(remove_zeros(n))) : n
 end
 
 huge_int = 10
