@@ -15,7 +15,15 @@
 # *E.g.* isogram?("scary") should return true
 
 def isogram?(input)
-    # Your code goes here
+    if input.class == String
+      isogram?(input.chars)
+    else
+      if input.length > 1
+        input[0] != input[1] ? isogram?(input.drop(1)) : false
+      else 
+        true
+      end
+    end
 end
 
 # Test your code here
