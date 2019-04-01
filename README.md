@@ -78,6 +78,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 81e46faea3bf8de55ef764c4abc4d6c440b9bae5
 =======
 * 21_sort_numbers
@@ -92,8 +93,14 @@
 * 23_first_non_repeating
 >>>>>>> a87187ce63d794abb384db7a7bfb3dbc533fc579
 =======
+=======
+>>>>>>> 956e44bc9d9466bda375724a73da6f56ae18eb35
 * 21_sort_numbers
 * 22_exes_ohs
 * 23_first_non_repeating
 * 24_isogram
+<<<<<<< HEAD
 >>>>>>> d803e12e3b11627a2fdc70c32df1d4ca01cf3571
+=======
+* 25_remove_adjacent_duplicates
+>>>>>>> 956e44bc9d9466bda375724a73da6f56ae18eb35
