@@ -44,3 +44,8 @@
 * 23_first_non_repeating
 * 24_isogram
 * 25_remove_adjacent_duplicates
+<<<<<<< HEAD
+=======
+* 26_max_min
+* 27_in_array_strict
+>>>>>>> d050ff1e9debde4c151e86e164b777a6f194c92e
