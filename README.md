@@ -47,4 +47,3 @@
 * 26_max_min
 * 27_in_array_strict
 * 28_good_walk
->>>>>>> d1590d51523066ffed717893428a7f47ddb00feb
